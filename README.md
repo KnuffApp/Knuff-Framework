@@ -8,7 +8,7 @@ Knuff supports iOS 8.0+
 
 ## Importing Knuff
 
-To add Mantle to your application:
+To add Knuff to your application:
 
  1. Drag and drop `Knuff.xcodeproj` into your application's Xcode project.
  1. On the "General" tab of your application target, add `Knuff.framework` to the "Embedded Binaries".
