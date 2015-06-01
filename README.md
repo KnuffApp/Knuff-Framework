@@ -18,6 +18,11 @@ To add Mantle to your application:
 github "KnuffApp/Knuff-Framework"
 ```
 
+Or if you prefer [Cocoapods](https://cocoapods.org) just add Knuff to your `Podfile`:
+```
+pod "Knuff"
+```
+
 ## License
 
 Knuff is released under the MIT license. See
