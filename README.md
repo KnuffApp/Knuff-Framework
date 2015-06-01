@@ -26,7 +26,7 @@ pod "Knuff"
 ## License
 
 Knuff is released under the MIT license. See
-[LICENSE.md](https://github.com/KnuffApp/Knuff-Framework/blob/master/LICENSE).
+[LICENSE](https://github.com/KnuffApp/Knuff-Framework/blob/master/LICENSE).
 
 ## More Info
 
