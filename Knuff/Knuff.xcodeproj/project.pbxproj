@@ -161,6 +161,7 @@
 		F40A10B91B1B2B26006484D0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MBB;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Bowtie;
 				TargetAttributes = {
@@ -404,6 +405,7 @@
 				F40A10DA1B1B2B26006484D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F40A10DB1B1B2B26006484D0 /* Build configuration list for PBXNativeTarget "KnuffTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +414,7 @@
 				F40A10DD1B1B2B26006484D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
