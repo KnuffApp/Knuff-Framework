@@ -72,7 +72,9 @@ void sb_swizzle(Class class, SEL orig, SEL new) {
   IMP newIMP = imp_implementationWithBlock(^(id _self, UIApplication *application, NSData *deviceToken) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-    [_self performSelector:newSEL withObject:application withObject:deviceToken];
+    if ([_self respondsToSelector:newSEL]) {
+      [_self performSelector:newSEL withObject:application withObject:deviceToken];
+    }
 #pragma clang diagnostic pop
     
     dispatch_async([MBBKnuff _knuff].queue, ^{
@@ -87,8 +89,14 @@ void sb_swizzle(Class class, SEL orig, SEL new) {
   SEL origSEL = @selector(application:didRegisterForRemoteNotificationsWithDeviceToken:);
   Method origMethod = class_getInstanceMethod([appDelegate class], origSEL);
   
-  class_addMethod([appDelegate class], newSEL, newIMP, method_getTypeEncoding(origMethod));
-  sb_swizzle([appDelegate class], origSEL, newSEL);
+  if ([appDelegate respondsToSelector:origSEL]) {
+    class_addMethod([appDelegate class], newSEL, newIMP, method_getTypeEncoding(origMethod));
+    sb_swizzle([appDelegate class], origSEL, newSEL);
+    
+  } else {
+    //If the original method doesn't exist at all, add it without needing to swizzle.
+    class_addMethod([appDelegate class], origSEL, newIMP, method_getTypeEncoding(origMethod));
+  }
   
   [[NSNotificationCenter defaultCenter] addObserver:[MBBKnuff _knuff]
                                            selector:@selector(_applicationDidBecomeActiveNotification:)
