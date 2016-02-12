@@ -18,7 +18,7 @@ To add Knuff to your application:
 github "KnuffApp/Knuff-Framework"
 ```
 
-Or if you prefer [Cocoapods](https://cocoapods.org) just add Knuff to your `Podfile`:
+Or if you prefer [CocoaPods](https://cocoapods.org) just add Knuff to your `Podfile`:
 ```
 pod "Knuff"
 ```
